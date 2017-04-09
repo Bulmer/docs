@@ -261,7 +261,7 @@ DKIM involves setting up the OpenDKIM package, hooking it into Postfix, and addi
         chmod -R go-rwx /etc/opendkim/keys
 
 8.  Generate keys for each domain:
-
+        cd /etc/opendkim/keys
         opendkim-genkey -b 2048 -h rsa-sha256 -r -s YYYYMM -d example.com -v
 
     Replace `YYYYMM` with the current year and month as in the key table. This will give you two files, `YYYYMM.private` containing the key and `YYYYMM.txt` containing the TXT record you'll need to set up DNS. Rename the files so they have names matching the third section of the second field of the key table for the domain:
